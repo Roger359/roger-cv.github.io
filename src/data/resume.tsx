@@ -201,7 +201,7 @@ export const DATA = {
 					icon: <Icons.globe className="size-3" />,
 				},
 			],
-			image: "/tastybites212.png",
+			image: "/tastybites212.png"
 		},
 		{
 			title: "MNL Innovation LLC",
