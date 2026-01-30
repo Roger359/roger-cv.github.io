@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { DATA } from "@/data/resume";
+import { Button } from "@/components/ui/button";
+import { Icons } from "@/components/icons";
 
 export default function ContactSection() {
   return (
@@ -19,23 +21,30 @@ export default function ContactSection() {
           }}
         />
       </div>
-      <div className="relative flex flex-col items-center gap-4 text-center">
+      <div className="relative flex flex-col items-center gap-6 text-center">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
           Get in Touch
         </h2>
         <p className="mx-auto max-w-lg text-muted-foreground text-balance">
           Want to chat? Just shoot me a dm{" "}
-          <Link
-            href={DATA.contact.social.X.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
-          >
-            with a direct question on twitter
-          </Link>{" "}
+          
           and I&apos;ll respond whenever I can. I will ignore all
           soliciting.
         </p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Button asChild>
+            <Link href="mailto:roger@mnlinnovation.com">
+              <Icons.email className="mr-2 h-4 w-4" />
+              Send Email
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+              <Icons.calendly className="mr-2 h-4 w-4" />
+              Schedule Meeting
+            </Link>
+          </Button>
+        </div>
       </div>
     </div>
   );
